@@ -21,15 +21,55 @@ const [allMemeImages, setAllMemeImages] = React.useState(MemesData)
        setMeme((prevMeme => ({...prevMeme, randomImage: memesArray[randomMeme].url})))
     }
 
+    function handleChange(event){
+        const {name, value} = event.target
+        setMeme(prevMeme => ({...prevMeme, [name]: value
+        
+        })
+        )}
+  
+
     return(
+        
         <div>
+        
             <div className="form-ctn">
-                <input className="top-input" placeholder="Top Text" />
-                <input className="bottom-input" placeholder="Bottom Text"/>
-                <button className="form-btn" onClick={getMemeImage}>
-                    <h1>Getting a new meme image</h1></button>
-                    <img src={meme.randomImage} className="meme-img"/>
+                <input 
+                type="text"
+                className="top-input" 
+                placeholder="Top Text"
+                name="topText"
+                onChange={handleChange}
+                value={meme.topText}
+                 />
+
+                <input 
+                type="text"
+                className="bottom-input"
+                placeholder="Bottom Text"
+                name="bottomText"
+                onChange={handleChange}
+                value={meme.bottomText}
+                />
+
+                
+                <button 
+                className="form-btn" 
+                onClick={getMemeImage}
+                >
+
+                <h1>Getting a new meme image</h1></button>
+
+                <div className="meme">
+                <img 
+                src={meme.randomImage} 
+                className="meme-img"/>
+
+                <h2 className="meme--text top">{meme.topText}</h2>
+                <h2 className="meme--text bottom">{meme.bottomText}</h2>
+                </div>
             </div>
+            
         </div>
     )
 }
