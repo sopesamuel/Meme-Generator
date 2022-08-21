@@ -1,7 +1,7 @@
 import React from "react"
-import Navbar from './Components/Navbar';
+import Navbar from './Components/Navbar.js';
 import './App.css';
-import Meme from "./Components/Meme";
+import Meme from "./Components/Meme.js";
 
 function App() {
   return (
