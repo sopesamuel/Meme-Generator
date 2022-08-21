@@ -26,7 +26,7 @@ const [allMeme, setAllMeme] = React.useState([])
         .then(data => setAllMeme(data.data.memes))
     }, [])
     
-    console.log(allMeme)
+    // console.log(allMeme)
 
     function handleChange(event){
         const {name, value} = event.target
